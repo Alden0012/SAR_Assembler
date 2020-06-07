@@ -1,0 +1,13 @@
+DEPTH = 4096;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+[0..FFF]: 0;
+0   :   c8;
+1   :   f000;
+2   :   112c;
+3   :   a6ab;
+4   :   f000;
+END;
