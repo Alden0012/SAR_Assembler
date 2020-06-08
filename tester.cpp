@@ -6,5 +6,5 @@ int main(){
 	Assembler tester;
 	tester.Load();
 	tester.Assemble();
-	tester.Out();
+	tester.OutRAW();
 }

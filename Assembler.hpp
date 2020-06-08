@@ -21,5 +21,6 @@ class Assembler{
 		void Load();
 		void Assemble();
 		void Out(); 
+		void OutRAW();
 };
 #endif

@@ -168,3 +168,12 @@ void Assembler::Out(){
 	}
 	cout << "END;" << endl;
 }
+void Assembler::OutRAW(){
+	for(int i = 0;i<OutCode.size();i++){
+		cout << i << "   " << hex << OutCode[i]  <<endl; 
+	}
+	map<uint16_t,uint16_t>::iterator itr;
+	for(itr = MMap.begin();itr != MMap.end();++itr){
+		cout << itr->first << "   " << hex << itr->second << endl; 
+	}
+}
