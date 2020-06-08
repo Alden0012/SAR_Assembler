@@ -111,7 +111,12 @@ uint8_t Assembler::OpMap(string Index){
 void Assembler::Load(){
 	Instruction IR;
 	while(cin >> IR.Opcode){
-		if(IR.Opcode == "SSS"){
+		if(IR.Opcode == "MEM"){
+			uint16_t addr1,data;
+			cin >> addr1 >> data;
+			MMap.insert(pair<uint16_t,uint16_t>(addr1,data));
+		}
+		else if(IR.Opcode == "SSS"){
 			// cout << "debug"<< endl;
 			bool b1;
 			bool b2;
@@ -156,6 +161,10 @@ void Assembler::Out(){
 		cout << "[0..FFF]: 0;" << endl;
 	for(int i = 0;i<OutCode.size();i++){
 		cout << i << "   :" << "   " << hex << OutCode[i]  << ";"<< endl; 
+	}
+	map<uint16_t,uint16_t>::iterator itr;
+	for(itr = MMap.begin();itr != MMap.end();++itr){
+		cout << itr->first << "   :" << "   " << hex << itr->second  << ";"<< endl; 
 	}
 	cout << "END;" << endl;
 }
