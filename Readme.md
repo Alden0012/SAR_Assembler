@@ -17,5 +17,5 @@ Special Instructions:
 MEM (address) (data value):
 	Stores a data value at the address specified by the instruction prior to execution of the code. (All values are in decimal)
 
-SSS (Carry) (Operation) (Rd) (Rs)
+SSS (Carry bit 1) (Carry bit 0) (Operation) (Rd) (Rs)
 
