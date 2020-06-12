@@ -19,3 +19,17 @@ MEM (address) (data value):
 
 SSS (Carry bit 1) (Carry bit 0) (Operation) (Rd) (Rs)
 
+For .MIF Export:
+	
+	Run the Assembler with an arguement of 1.
+
+	It will read the assembly code in the file "test.txt"
+
+For the Simulator: 
+	
+	Provide permissions for Simulate.sh using chmod +x.
+
+	Run Simulate.sh, It will run the assembly code in the file "test.txt".
+
+	The script will prompt the user for an Instruction execution period, this is the time between instructions being executed in seconds, leave it at 0 for maximum possible speed.
+
