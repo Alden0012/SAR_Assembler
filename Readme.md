@@ -23,7 +23,7 @@ For .MIF Export:
 	
 	Run the Assembler with an arguement of 1.
 
-	It will read the assembly code in the file "test.txt"
+	It will read assembly from cin.
 
 For the Simulator: 
 	
