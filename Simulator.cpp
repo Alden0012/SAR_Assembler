@@ -32,7 +32,7 @@ void Simulator::outContents(){
 	}
 }
 void Simulator::Simulate(int clockDelay){
-	
+
 	while(Memory[pc] != 0 && (end == false)){
 		cout << "--------PC: " << pc << ": " << hex << Memory[pc] <<  "-------------" << endl;
 		//cout << clockDelay << endl;
@@ -70,7 +70,7 @@ void Simulator::Simulate(int clockDelay){
 				cycles += 2;
 				break;
 			case 0x6:
-				if(Regs[0] < 0){
+				if((Regs[0] >> 12) >= 8){
 					pc = operand;
 				}
 				else{
@@ -129,7 +129,7 @@ void Simulator::Simulate(int clockDelay){
 				cycles += 2;
 				break;
 			case 0xe:
-				Memory[StackPtr] = pc;
+				Memory[StackPtr] = pc+1;
 				StackPtr--;
 				pc = operand;
 				cycles += 2;
@@ -197,11 +197,11 @@ void Simulator::SSS(){
 			break;
 		case 0x7:
 			Memory[StackPtr] = Regs[Rs];
-			StackPtr++;
+			StackPtr--;
 			pc++;
 			break;
 		case 0x8:
-			StackPtr--;
+			StackPtr++;
 			Regs[Rs] = Memory[StackPtr];
 			pc++;
 			break;
