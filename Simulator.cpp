@@ -203,7 +203,6 @@ void Simulator::SSS(){
 		case 0x8:
 			StackPtr--;
 			Regs[Rs] = Memory[StackPtr];
-			cycles++;
 			pc++;
 			break;
 		case 0x9:
